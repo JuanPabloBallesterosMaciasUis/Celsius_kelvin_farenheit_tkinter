@@ -1,8 +1,15 @@
 #Se importa libreria tkinter con todas sus funciones
 
 from tkinter import * 
+from tkinter import messagebox
 
 #ventana principal
+
+# Funciones
+def sumar():
+    messagebox.showinfo("Suma 1.0", "hizo click en el boton sumar")
+    z = int(x.get())+ int(y.get())
+    boton_operar.insert(INSERT, "la suma de " + x.get()+ "+" +y.get()+ " casi siempre es " + str(z) + "\n")
 
 ventana_principal = Tk()
 
@@ -13,18 +20,24 @@ ventana_principal.geometry("650x400")
 #Deshabilitar el boton de maximizar
 ventana_principal.resizable(0,0)
 
+
+
 #--------------------
 #frame entrada datos
 #--------------------
 
 # imagen de la app
-logo = PhotoImage(file = "img/magnitudes.jpg")
+logo = PhotoImage(file = "img/magnitudes.png")
 lb_logo = Label(ventana_principal, image = logo)
-lb_logo.place(x = 325 , y = 61)
+lb_logo.place(x = 380 , y = 70)
 
-# Entrada de numeros
-e_texto = Entry(ventana_principal, font = ("Rubik 10"),justify= 'right', width = 15)
-e_texto.place(x=241, y=85)
+
+# Entry para grados celsius
+#textvariable=x)
+entry_x = Entry(ventana_principal)
+entry_x.config(font=("Arial",20), justify=LEFT,fg="blue")
+entry_x.focus_set()
+entry_x.place(x=190, y=78, width=115, height=30)
 
 # Etiquetas para el titulo de app
 titulo = Label(ventana_principal, text = "Celsius, kelvin y farenheit")
@@ -32,19 +45,11 @@ titulo.config(fg = "red", font = ("Bahnschrift Condensed",20))
 titulo.place(x = 45, y = 10)
 
 # Etiqueta para el input
-texto_radio = Label(ventana_principal, text = "Dijite el valor del radio: ")
-texto_radio.config(fg = "black", font = ("Arial",16))
-texto_radio.place(x = 20, y = 80)
+# Etiqueta para x
+lb_x = Label(ventana_principal, text = "Digite los °C: ")
+lb_x.config(bg="white", fg="blue", font=("Arial",16))
+lb_x.place(x=40, y=78, width=140, height=30)
 
-# Etiquetas para el output
-
-resultado_perimetro = Label(ventana_principal, text = "El perimetro del circulo es: ")
-resultado_perimetro.config(fg = "black", font = ("Arial",16))
-resultado_perimetro.place(x = 20, y = 290)
-
-resultado_area = Label(ventana_principal, text = "El área del circulo es: ")
-resultado_area.config(fg = "black", font = ("Arial",16))
-resultado_area.place(x = 20, y = 320)
 
 # Botones
 boton_operar = Button(ventana_principal, text = "Operar", width = 7, height = 1, fg = "red",font = ("Bahnschrift Condensed",15))

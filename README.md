@@ -1,5 +1,5 @@
-# Ejercicio No. 1: Area y perimetro del circulo
+# Ejercicio Interfaz grafica de Celsius, kelvin y farenheit.
 
-## Diagrama de flujo
 
-![Diagrama de flujo](diagrama.png "Diagrama de flujo")
+
+!
